@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "azbalac-blocks/container",
+	"version": "0.1.0",
+	"title": "Container",
+	"category": "azbalac-blocks",
+	"icon": "smiley",
+	"description": "A container from Bootstrap Framework",
+	
+	"textdomain": "azbalac-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"backgroundColor": {
+			"type": "string"
+		},
+		"containerType": {
+			"type": "string",
+			"default": "container"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"html": true,
+		"color": {
+			"gradients": true,
+			"text": false
+		}
+	}
+}
