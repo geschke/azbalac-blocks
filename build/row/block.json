@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "azbalac-blocks/row",
+  "version": "0.1.0",
+  "title": "Row",
+  "category": "azbalac-blocks",
+  "description": "A row from Bootstrap Framework",
+  "textdomain": "azbalac-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "backgroundColor": {
+      "type": "string"
+    },
+    "rowType": {
+      "type": "string",
+      "default": "row"
+    }
+  },
+  "supports": {
+    "anchor": true,
+    "html": true,
+    "color": {
+      "gradients": true,
+      "text": false
+    }
+  }
+}

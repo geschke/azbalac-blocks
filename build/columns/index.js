@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/container/edit.js":
-/*!*******************************!*\
-  !*** ./src/container/edit.js ***!
-  \*******************************/
+/***/ "./src/columns/edit.js":
+/*!*****************************!*\
+  !*** ./src/columns/edit.js ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/container/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/columns/editor.scss");
 
 /**
  * External dependencies
@@ -70,33 +70,51 @@ function Edit(_ref) {
   const {
     align,
     //items,
-    containerType
+    colType
   } = attributes;
-  const containerTypeOptions = [{
-    value: "container",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('none (default container class)', 'azbalac-blocks')
+  const colTypeOptions = [{
+    value: "col",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('none (default auto-layout column class)', 'azbalac-blocks')
   }, {
-    value: "container-fluid",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('fluid container', 'azbalac-blocks')
+    value: "col-1",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 1', 'azbalac-blocks')
   }, {
-    value: "container-sm",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('small', 'azbalac-blocks')
+    value: "col-2",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 2', 'azbalac-blocks')
   }, {
-    value: "container-md",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('medium', 'azbalac-blocks')
+    value: "col-3",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 3', 'azbalac-blocks')
   }, {
-    value: "container-lg",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('large', 'azbalac-blocks')
+    value: "col-4",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 4', 'azbalac-blocks')
   }, {
-    value: "container-xl",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('x-large', 'azbalac-blocks')
+    value: "col-5",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 5', 'azbalac-blocks')
   }, {
-    value: "container-xxl",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('xx-large', 'azbalac-blocks')
+    value: "col-6",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 6', 'azbalac-blocks')
+  }, {
+    value: "col-7",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 7', 'azbalac-blocks')
+  }, {
+    value: "col-8",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 8', 'azbalac-blocks')
+  }, {
+    value: "col-9",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 9', 'azbalac-blocks')
+  }, {
+    value: "col-10",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 10', 'azbalac-blocks')
+  }, {
+    value: "col-11",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 11', 'azbalac-blocks')
+  }, {
+    value: "col-12",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 12', 'azbalac-blocks')
   }];
-  const containerClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'azb-container', `align${align}`, containerType);
+  const colClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'azb-col', `align${align}`, colType);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
-    className: containerClasses
+    className: colClasses
   });
 
   //const ALLOWED_BLOCKS =  [ 'core/heading', 'core/paragraph', 'core/image' ]; 
@@ -108,23 +126,23 @@ function Edit(_ref) {
     templateInsertUpdatesSelection: true
   });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Container', 'azbalac-blocks')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Columns', 'azbalac-blocks')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Container Type", "azbalac-blocks"),
-    value: containerType,
-    options: containerTypeOptions,
-    onChange: containerType => setAttributes({
-      containerType
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Column Type", "azbalac-blocks"),
+    value: colType,
+    options: colTypeOptions,
+    onChange: colType => setAttributes({
+      colType
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps));
 }
 
 /***/ }),
 
-/***/ "./src/container/icon.js":
-/*!*******************************!*\
-  !*** ./src/container/icon.js ***!
-  \*******************************/
+/***/ "./src/columns/icon.js":
+/*!*****************************!*\
+  !*** ./src/columns/icon.js ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -143,36 +161,36 @@ const {
 } = wp.components;
 
 /**
-* Icon definition from https://icons.getbootstrap.com/icons/collection/
+* Icon definition from https://icons.getbootstrap.com/icons/layout-three-columns/
 */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: "16",
   height: "16",
   fill: "currentColor",
-  class: "bi bi-collection",
+  class: "bi bi-layout-three-columns",
   viewBox: "0 0 16 16"
 }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-  d: "M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"
+  d: "M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13zM1.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5H5V1H1.5zM10 15V1H6v14h4zm1 0h3.5a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5H11v14z"
 })));
 
 /***/ }),
 
-/***/ "./src/container/index.js":
-/*!********************************!*\
-  !*** ./src/container/index.js ***!
-  \********************************/
+/***/ "./src/columns/index.js":
+/*!******************************!*\
+  !*** ./src/columns/index.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/container/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/container/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/container/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/container/block.json");
-/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icon */ "./src/container/icon.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/columns/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/columns/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/columns/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/columns/block.json");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icon */ "./src/columns/icon.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -191,6 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Internal dependencies
+ * 
  */
 
 
@@ -215,10 +234,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/container/save.js":
-/*!*******************************!*\
-  !*** ./src/container/save.js ***!
-  \*******************************/
+/***/ "./src/columns/save.js":
+/*!*****************************!*\
+  !*** ./src/columns/save.js ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -260,13 +279,13 @@ function save(_ref) {
     attributes
   } = _ref;
   const {
-    containerType
+    colType
   } = attributes;
-  const containerClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(
+  const colClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(
   //classnames,
-  'azb-container', containerType);
+  'azb-columns', colType);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: containerClasses
+    className: colClasses
   });
   const innerBlocksProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps.save(blockProps);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps);
@@ -343,10 +362,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./src/container/editor.scss":
-/*!***********************************!*\
-  !*** ./src/container/editor.scss ***!
-  \***********************************/
+/***/ "./src/columns/editor.scss":
+/*!*********************************!*\
+  !*** ./src/columns/editor.scss ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -356,10 +375,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/container/style.scss":
-/*!**********************************!*\
-  !*** ./src/container/style.scss ***!
-  \**********************************/
+/***/ "./src/columns/style.scss":
+/*!********************************!*\
+  !*** ./src/columns/style.scss ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -424,14 +443,14 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/container/block.json":
-/*!**********************************!*\
-  !*** ./src/container/block.json ***!
-  \**********************************/
+/***/ "./src/columns/block.json":
+/*!********************************!*\
+  !*** ./src/columns/block.json ***!
+  \********************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"azbalac-blocks/container","version":"0.1.0","title":"Container","category":"azbalac-blocks","icon":"smiley","description":"A container from Bootstrap Framework","textdomain":"azbalac-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"backgroundColor":{"type":"string"},"containerType":{"type":"string","default":"container"}},"supports":{"anchor":true,"html":true,"color":{"gradients":true,"text":false}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"azbalac-blocks/columns","version":"0.1.0","title":"Columns","category":"azbalac-blocks","icon":"smiley","description":"A column from Bootstrap Framework","textdomain":"azbalac-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"backgroundColor":{"type":"string"},"colType":{"type":"string","default":"col"}},"supports":{"anchor":true,"html":true,"color":{"gradients":true,"text":false}}}');
 
 /***/ })
 
@@ -545,8 +564,8 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"container/index": 0,
-/******/ 			"container/style-index": 0
+/******/ 			"columns/index": 0,
+/******/ 			"columns/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -596,7 +615,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["container/style-index"], () => (__webpack_require__("./src/container/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["columns/style-index"], () => (__webpack_require__("./src/columns/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

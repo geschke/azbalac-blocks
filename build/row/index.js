@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/container/edit.js":
-/*!*******************************!*\
-  !*** ./src/container/edit.js ***!
-  \*******************************/
+/***/ "./src/row/edit.js":
+/*!*************************!*\
+  !*** ./src/row/edit.js ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/container/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/row/editor.scss");
 
 /**
  * External dependencies
@@ -70,33 +70,54 @@ function Edit(_ref) {
   const {
     align,
     //items,
-    containerType
+    rowType
   } = attributes;
-  const containerTypeOptions = [{
-    value: "container",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('none (default container class)', 'azbalac-blocks')
+  const rowTypeOptions = [{
+    value: "row",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('none (default row class)', 'azbalac-blocks')
   }, {
-    value: "container-fluid",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('fluid container', 'azbalac-blocks')
+    value: "row row-cols-auto",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns (auto)', 'azbalac-blocks')
   }, {
-    value: "container-sm",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('small', 'azbalac-blocks')
+    value: "row row-cols-1",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 1 row', 'azbalac-blocks')
   }, {
-    value: "container-md",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('medium', 'azbalac-blocks')
+    value: "row row-cols-2",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 2 rows', 'azbalac-blocks')
   }, {
-    value: "container-lg",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('large', 'azbalac-blocks')
+    value: "row row-cols-3",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 3 rows', 'azbalac-blocks')
   }, {
-    value: "container-xl",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('x-large', 'azbalac-blocks')
+    value: "row row-cols-4",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 4 rows', 'azbalac-blocks')
   }, {
-    value: "container-xxl",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('xx-large', 'azbalac-blocks')
+    value: "row row-cols-5",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 5 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-6",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 6 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-7",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 7 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-8",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 8 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-9",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 9 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-10",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 10 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-11",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 11 rows', 'azbalac-blocks')
+  }, {
+    value: "row row-cols-12",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('row columns, 12 rows', 'azbalac-blocks')
   }];
-  const containerClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'azb-container', `align${align}`, containerType);
+  const rowClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'azb-row', `align${align}`, rowType);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
-    className: containerClasses
+    className: rowClasses
   });
 
   //const ALLOWED_BLOCKS =  [ 'core/heading', 'core/paragraph', 'core/image' ]; 
@@ -108,23 +129,23 @@ function Edit(_ref) {
     templateInsertUpdatesSelection: true
   });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Container', 'azbalac-blocks')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Row', 'azbalac-blocks')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Container Type", "azbalac-blocks"),
-    value: containerType,
-    options: containerTypeOptions,
-    onChange: containerType => setAttributes({
-      containerType
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Row Type", "azbalac-blocks"),
+    value: rowType,
+    options: rowTypeOptions,
+    onChange: rowType => setAttributes({
+      rowType
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps));
 }
 
 /***/ }),
 
-/***/ "./src/container/icon.js":
-/*!*******************************!*\
-  !*** ./src/container/icon.js ***!
-  \*******************************/
+/***/ "./src/row/icon.js":
+/*!*************************!*\
+  !*** ./src/row/icon.js ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -143,36 +164,36 @@ const {
 } = wp.components;
 
 /**
-* Icon definition from https://icons.getbootstrap.com/icons/collection/
+* Icon definition from https://icons.getbootstrap.com/icons/view-list/
 */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: "16",
   height: "16",
   fill: "currentColor",
-  class: "bi bi-collection",
+  class: "bi bi-view-list",
   viewBox: "0 0 16 16"
 }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-  d: "M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"
+  d: "M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"
 })));
 
 /***/ }),
 
-/***/ "./src/container/index.js":
-/*!********************************!*\
-  !*** ./src/container/index.js ***!
-  \********************************/
+/***/ "./src/row/index.js":
+/*!**************************!*\
+  !*** ./src/row/index.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/container/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/container/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/container/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/container/block.json");
-/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icon */ "./src/container/icon.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/row/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/row/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/row/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/row/block.json");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icon */ "./src/row/icon.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -191,6 +212,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Internal dependencies
+ * 
  */
 
 
@@ -215,10 +237,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/container/save.js":
-/*!*******************************!*\
-  !*** ./src/container/save.js ***!
-  \*******************************/
+/***/ "./src/row/save.js":
+/*!*************************!*\
+  !*** ./src/row/save.js ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -260,13 +282,13 @@ function save(_ref) {
     attributes
   } = _ref;
   const {
-    containerType
+    rowType
   } = attributes;
-  const containerClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(
+  const rowClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(
   //classnames,
-  'azb-container', containerType);
+  'azb-row', rowType);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: containerClasses
+    className: rowClasses
   });
   const innerBlocksProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps.save(blockProps);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps);
@@ -343,10 +365,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./src/container/editor.scss":
-/*!***********************************!*\
-  !*** ./src/container/editor.scss ***!
-  \***********************************/
+/***/ "./src/row/editor.scss":
+/*!*****************************!*\
+  !*** ./src/row/editor.scss ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -356,10 +378,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/container/style.scss":
-/*!**********************************!*\
-  !*** ./src/container/style.scss ***!
-  \**********************************/
+/***/ "./src/row/style.scss":
+/*!****************************!*\
+  !*** ./src/row/style.scss ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -424,14 +446,14 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/container/block.json":
-/*!**********************************!*\
-  !*** ./src/container/block.json ***!
-  \**********************************/
+/***/ "./src/row/block.json":
+/*!****************************!*\
+  !*** ./src/row/block.json ***!
+  \****************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"azbalac-blocks/container","version":"0.1.0","title":"Container","category":"azbalac-blocks","icon":"smiley","description":"A container from Bootstrap Framework","textdomain":"azbalac-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"backgroundColor":{"type":"string"},"containerType":{"type":"string","default":"container"}},"supports":{"anchor":true,"html":true,"color":{"gradients":true,"text":false}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"azbalac-blocks/row","version":"0.1.0","title":"Row","category":"azbalac-blocks","description":"A row from Bootstrap Framework","textdomain":"azbalac-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"backgroundColor":{"type":"string"},"rowType":{"type":"string","default":"row"}},"supports":{"anchor":true,"html":true,"color":{"gradients":true,"text":false}}}');
 
 /***/ })
 
@@ -545,8 +567,8 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"container/index": 0,
-/******/ 			"container/style-index": 0
+/******/ 			"row/index": 0,
+/******/ 			"row/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -596,7 +618,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["container/style-index"], () => (__webpack_require__("./src/container/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["row/style-index"], () => (__webpack_require__("./src/row/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

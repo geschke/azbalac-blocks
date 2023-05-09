@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "azbalac-blocks/columns",
+  "version": "0.1.0",
+  "title": "Columns",
+  "category": "azbalac-blocks",
+  "icon": "smiley",
+  "description": "A column from Bootstrap Framework",
+  "textdomain": "azbalac-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "backgroundColor": {
+      "type": "string"
+    },
+    "colType": {
+      "type": "string",
+      "default": "col"
+    }
+  },
+  "supports": {
+    "anchor": true,
+    "html": true,
+    "color": {
+      "gradients": true,
+      "text": false
+    }
+  }
+}

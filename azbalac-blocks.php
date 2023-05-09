@@ -39,5 +39,7 @@ add_filter( 'block_categories_all', function( $categories, $post ) {
  */
 function azbalac_blocks_azbalac_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/container' );
+	register_block_type( __DIR__ . '/build/row' );
+	register_block_type( __DIR__ . '/build/columns' );
 }
 add_action( 'init', 'azbalac_blocks_azbalac_blocks_block_init' );
