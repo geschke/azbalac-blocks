@@ -12,6 +12,7 @@ import { __ } from '@wordpress/i18n';
 
 import {
 	PanelBody,
+	RangeControl,
 	SelectControl,
 } from '@wordpress/components';
 
@@ -50,6 +51,11 @@ export default function Edit( { attributes, setAttributes, className }) {
 		align,
 		//items,
 		colType,
+		colTypeSM,
+		colTypeMD,
+		colTypeLG,
+		colTypeXL,
+		colTypeXXL
 	} = attributes;
 
 	const colTypeOptions = [
@@ -69,11 +75,23 @@ export default function Edit( { attributes, setAttributes, className }) {
 
 	];
 
+	let colClassSM = colTypeSM != 0 ? 'col-sm-' + colTypeSM : '';
+	let colClassMD = colTypeMD != 0 ? 'col-md-' + colTypeMD : '';
+	let colClassLG = colTypeLG != 0 ? 'col-lg-' + colTypeLG : '';
+	let colClassXL = colTypeXL != 0 ? 'col-xl-' + colTypeXL : '';
+	let colClassXXL = colTypeXXL != 0 ? 'col-xxl-' + colTypeXXL : '';
+
+
 	const colClasses = classnames(
 		className,
 		'azb-col',
 		`align${align}`,
 		colType,
+		colClassSM,
+		colClassMD,
+		colClassLG,
+		colClassXL,
+		colClassXXL
 	);
 
 	const blockProps = useBlockProps( { className: colClasses } );
@@ -91,7 +109,7 @@ export default function Edit( { attributes, setAttributes, className }) {
 		<Fragment>
 			<InspectorControls>
 				<PanelBody
-					title={__('Columns', 'azbalac-blocks')}
+					title={__('Column Options', 'azbalac-blocks')}
 				>
 				<SelectControl
 					label={__("Column Type", "azbalac-blocks")}
@@ -99,7 +117,57 @@ export default function Edit( { attributes, setAttributes, className }) {
 					options={colTypeOptions}
 					onChange={colType => setAttributes({ colType })}
 				/>
-				</PanelBody>
+				
+				
+				<p>Add Bootstrap breakpoint settings for grid. Choose 0 for no specific setting.</p>
+				<RangeControl label = { __('Small (col-sm-*)', 'azbalac-blocks')}
+					value={ colTypeSM }
+          onChange={ ( value ) => setAttributes( { colTypeSM: value } ) }
+          min="0"
+          max="12"
+					initialPosition="0"
+					resetFallbackValue="0"
+					allowReset="true"
+         />
+				 	<RangeControl label = { __('Medium (col-md-*)', 'azbalac-blocks')}
+					value={ colTypeMD }
+          onChange={ ( value ) => setAttributes( { colTypeMD: value } ) }
+          min="0"
+          max="12"
+					initialPosition="0"
+					resetFallbackValue="0"
+					allowReset="true"
+         />
+				<RangeControl label = { __('Large (col-lg-*)', 'azbalac-blocks')}
+					value={ colTypeLG }
+          onChange={ ( value ) => setAttributes( { colTypeLG: value } ) }
+          min="0"
+          max="12"
+					initialPosition="0"
+					resetFallbackValue="0"
+					allowReset="true"
+         />
+				<RangeControl label = { __('Extra large (col-xl-*)', 'azbalac-blocks')}
+					value={ colTypeXL }
+          onChange={ ( value ) => setAttributes( { colTypeXL: value } ) }
+          min="0"
+          max="12"
+					initialPosition="0"
+					resetFallbackValue="0"
+					allowReset="true"
+         />
+				<RangeControl label = { __('Extra extra large (col-xxl-*)', 'azbalac-blocks')}
+					value={ colTypeXXL }
+          onChange={ ( value ) => setAttributes( { colTypeXXL: value } ) }
+          min="0"
+          max="12"
+					initialPosition="0"
+					resetFallbackValue="0"
+					allowReset="true"
+         />
+
+        </PanelBody>
+				
 			</InspectorControls>
 			<div { ...innerBlocksProps } />
 		</Fragment>

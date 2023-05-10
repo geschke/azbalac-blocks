@@ -70,7 +70,12 @@ function Edit(_ref) {
   const {
     align,
     //items,
-    colType
+    colType,
+    colTypeSM,
+    colTypeMD,
+    colTypeLG,
+    colTypeXL,
+    colTypeXXL
   } = attributes;
   const colTypeOptions = [{
     value: "col",
@@ -112,7 +117,12 @@ function Edit(_ref) {
     value: "col-12",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('column width 12', 'azbalac-blocks')
   }];
-  const colClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'azb-col', `align${align}`, colType);
+  let colClassSM = colTypeSM != 0 ? 'col-sm-' + colTypeSM : '';
+  let colClassMD = colTypeMD != 0 ? 'col-md-' + colTypeMD : '';
+  let colClassLG = colTypeLG != 0 ? 'col-lg-' + colTypeLG : '';
+  let colClassXL = colTypeXL != 0 ? 'col-xl-' + colTypeXL : '';
+  let colClassXXL = colTypeXXL != 0 ? 'col-xxl-' + colTypeXXL : '';
+  const colClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, 'azb-col', `align${align}`, colType, colClassSM, colClassMD, colClassLG, colClassXL, colClassXXL);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
     className: colClasses
   });
@@ -126,7 +136,7 @@ function Edit(_ref) {
     templateInsertUpdatesSelection: true
   });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Columns', 'azbalac-blocks')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Column Options', 'azbalac-blocks')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Column Type", "azbalac-blocks"),
     value: colType,
@@ -134,6 +144,61 @@ function Edit(_ref) {
     onChange: colType => setAttributes({
       colType
     })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Add Bootstrap breakpoint settings for grid. Choose 0 for no specific setting."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Small (col-sm-*)', 'azbalac-blocks'),
+    value: colTypeSM,
+    onChange: value => setAttributes({
+      colTypeSM: value
+    }),
+    min: "0",
+    max: "12",
+    initialPosition: "0",
+    resetFallbackValue: "0",
+    allowReset: "true"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Medium (col-md-*)', 'azbalac-blocks'),
+    value: colTypeMD,
+    onChange: value => setAttributes({
+      colTypeMD: value
+    }),
+    min: "0",
+    max: "12",
+    initialPosition: "0",
+    resetFallbackValue: "0",
+    allowReset: "true"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Large (col-lg-*)', 'azbalac-blocks'),
+    value: colTypeLG,
+    onChange: value => setAttributes({
+      colTypeLG: value
+    }),
+    min: "0",
+    max: "12",
+    initialPosition: "0",
+    resetFallbackValue: "0",
+    allowReset: "true"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Extra large (col-xl-*)', 'azbalac-blocks'),
+    value: colTypeXL,
+    onChange: value => setAttributes({
+      colTypeXL: value
+    }),
+    min: "0",
+    max: "12",
+    initialPosition: "0",
+    resetFallbackValue: "0",
+    allowReset: "true"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Extra extra large (col-xxl-*)', 'azbalac-blocks'),
+    value: colTypeXXL,
+    onChange: value => setAttributes({
+      colTypeXXL: value
+    }),
+    min: "0",
+    max: "12",
+    initialPosition: "0",
+    resetFallbackValue: "0",
+    allowReset: "true"
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", innerBlocksProps));
 }
 
@@ -279,11 +344,21 @@ function save(_ref) {
     attributes
   } = _ref;
   const {
-    colType
+    colType,
+    colTypeSM,
+    colTypeMD,
+    colTypeLG,
+    colTypeXL,
+    colTypeXXL
   } = attributes;
+  let colClassSM = colTypeSM != 0 ? 'col-sm-' + colTypeSM : '';
+  let colClassMD = colTypeMD != 0 ? 'col-md-' + colTypeMD : '';
+  let colClassLG = colTypeLG != 0 ? 'col-lg-' + colTypeLG : '';
+  let colClassXL = colTypeXL != 0 ? 'col-xl-' + colTypeXL : '';
+  let colClassXXL = colTypeXXL != 0 ? 'col-xxl-' + colTypeXXL : '';
   const colClasses = classnames__WEBPACK_IMPORTED_MODULE_1___default()(
   //classnames,
-  'azb-columns', colType);
+  'azb-columns', colType, colClassSM, colClassMD, colClassLG, colClassXL, colClassXXL);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
     className: colClasses
   });
@@ -450,7 +525,7 @@ module.exports = window["wp"]["i18n"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"azbalac-blocks/columns","version":"0.1.0","title":"Columns","category":"azbalac-blocks","icon":"smiley","description":"A column from Bootstrap Framework","textdomain":"azbalac-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"backgroundColor":{"type":"string"},"colType":{"type":"string","default":"col"}},"supports":{"anchor":true,"html":true,"color":{"gradients":true,"text":false}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"azbalac-blocks/columns","version":"0.1.0","title":"Columns","category":"azbalac-blocks","icon":"smiley","description":"A column from Bootstrap Framework","textdomain":"azbalac-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"backgroundColor":{"type":"string"},"colType":{"type":"string","default":"col"},"colTypeSM":{"type":"integer","default":0},"colTypeMD":{"type":"integer","default":0},"colTypeLG":{"type":"integer","default":0},"colTypeXL":{"type":"integer","default":0},"colTypeXXL":{"type":"integer","default":0}},"supports":{"anchor":true,"html":true,"color":{"gradients":true,"text":false}}}');
 
 /***/ })
 

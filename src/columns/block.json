@@ -19,6 +19,26 @@
 		"colType": {
 			"type": "string",
 			"default": "col"
+		},
+		"colTypeSM": {
+			"type": "integer",
+			"default": 0
+		},
+		"colTypeMD": {
+			"type": "integer",
+			"default": 0
+		},
+		"colTypeLG": {
+			"type": "integer",
+			"default": 0
+		},
+		"colTypeXL": {
+			"type": "integer",
+			"default": 0
+		},
+		"colTypeXXL": {
+			"type": "integer",
+			"default": 0
 		}
 	},
 	"supports": {

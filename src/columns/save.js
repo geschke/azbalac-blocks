@@ -28,12 +28,28 @@ export default function save( { attributes }) {
 
 	const {
 		colType,
+		colTypeSM,
+		colTypeMD,
+		colTypeLG,
+		colTypeXL,
+		colTypeXXL
 	} = attributes;
+
+	let colClassSM = colTypeSM != 0 ? 'col-sm-' + colTypeSM : '';
+	let colClassMD = colTypeMD != 0 ? 'col-md-' + colTypeMD : '';
+	let colClassLG = colTypeLG != 0 ? 'col-lg-' + colTypeLG : '';
+	let colClassXL = colTypeXL != 0 ? 'col-xl-' + colTypeXL : '';
+	let colClassXXL = colTypeXXL != 0 ? 'col-xxl-' + colTypeXXL : '';
 
 	const colClasses = classnames(
 		//classnames,
 		'azb-columns',
-		colType
+		colType,
+		colClassSM,
+		colClassMD,
+		colClassLG,
+		colClassXL,
+		colClassXXL		
 	);
 
 	const blockProps = useBlockProps.save( { className: colClasses } );
